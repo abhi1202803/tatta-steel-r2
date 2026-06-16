@@ -1,0 +1,34 @@
+name: Model Training
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * 0"
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r backend/requirements.txt
+          pip install -r backend/requirements-notebooks.txt || true
+
+      - name: Generate synthetic datasets
+        run: python scripts/generate_synthetic_data.py --datasets-only
+
+      - name: Generate training notebooks
+        run: python models/notebooks/create_training_notebooks.py
+
+      - name: Upload model registry artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: model-registry
+          path: model_registry/
+          if-no-files-found: ignore

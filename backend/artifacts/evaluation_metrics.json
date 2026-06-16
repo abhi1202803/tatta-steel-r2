@@ -1,0 +1,151 @@
+{
+  "isolation_forest": {
+    "precision": 0.7903494176372712,
+    "recall": 0.7864238410596026,
+    "f1": 0.7883817427385892,
+    "summary": "F1=0.788"
+  },
+  "autoencoder": {
+    "mean_reconstruction_error": 0.0003483230830170214,
+    "threshold_95pct": 0.0009677895141066983,
+    "summary": "MRE=0.0003"
+  },
+  "lstm_autoencoder": {
+    "mean_temporal_score": 5.300050735473633,
+    "anomaly_pct_above_3sigma": 0.6601731601731602,
+    "summary": "mean_z=5.30"
+  },
+  "xgboost_failure": {
+    "accuracy": 1.0,
+    "precision_macro": 1.0,
+    "recall_macro": 1.0,
+    "f1_macro": 1.0,
+    "confusion_matrix": [
+      [
+        218,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        46,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        194,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        44,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        102
+      ]
+    ],
+    "classification_report": {
+      "bearing_failure": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 218.0
+      },
+      "gearbox_failure": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 46.0
+      },
+      "motor_failure": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 194.0
+      },
+      "pump_failure": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 44.0
+      },
+      "sensor_failure": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 102.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 604.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 604.0
+      }
+    },
+    "summary": "Acc=1.000 F1=1.000"
+  },
+  "gnn_rca": {
+    "accuracy": 0.8428571428571429,
+    "f1_macro": 0.7164371013042365,
+    "summary": "Acc=0.843"
+  },
+  "lstm_rul": {
+    "mae": 245.09313317452168,
+    "rmse": 317.62956249390095,
+    "mape": 0.16621427712770642,
+    "summary": "MAE=245.1h RMSE=317.6h"
+  },
+  "tft_rul": {
+    "mae": 66.3824540704581,
+    "rmse": 84.84386592434332,
+    "mape": 0.04545609378892526,
+    "summary": "MAE=66.4h RMSE=84.8h"
+  },
+  "catboost_risk": {
+    "accuracy": 0.9678205128205128,
+    "f1_macro": 0.9512649744701116,
+    "labels": [
+      "low",
+      "medium",
+      "high",
+      "critical"
+    ],
+    "summary": "Acc=0.968"
+  },
+  "maintenance_rl": {
+    "mean_reward_test": 10.23835563659668,
+    "cost_saved_estimate": 79859.171875,
+    "downtime_reduction_score": 0.9108974358974359,
+    "actions": [
+      "do_nothing",
+      "monitor",
+      "schedule_maintenance",
+      "shutdown",
+      "order_spares"
+    ],
+    "summary": "Reward=10.24"
+  },
+  "prophet_forecast": {
+    "error": "'Prophet' object has no attribute 'stan_backend'"
+  }
+}

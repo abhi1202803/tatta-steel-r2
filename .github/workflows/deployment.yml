@@ -1,0 +1,24 @@
+name: Deployment
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "deployment/**"
+      - "docker-compose.yml"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build backend image
+        run: docker build -f deployment/docker/backend.Dockerfile -t maintenance-backend ./backend
+
+      - name: Build frontend image
+        run: docker build -f deployment/docker/frontend.Dockerfile -t maintenance-frontend ./frontend
+
+      - name: Validate compose
+        run: docker compose config

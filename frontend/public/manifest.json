@@ -1,0 +1,9 @@
+{
+  "name": "Industrial Maintenance Copilot",
+  "short_name": "Maintenance AI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#102a43",
+  "theme_color": "#f59e0b",
+  "icons": []
+}
